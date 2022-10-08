@@ -1,3 +1,5 @@
+//TODO Add a save function and more numeral systems
+
 package main
 
 import (
@@ -29,10 +31,10 @@ func converter() {
 		if ns == "q" {
 			os.Exit(0)
 		}
-		screen.Clear()
-		screen.MoveTopLeft()
-		if ns == "binary" || ns == "b" {
-			number := strconv.FormatInt(number, 2)
+		screen.Clear()                   // Clears the console
+		screen.MoveTopLeft()             // Exit causes the current program to exit with the given status code.
+		if ns == "binary" || ns == "b" { //! Spaghetti code
+			number := strconv.FormatInt(number, 2) // FormatInt returns the string representation of i in the given base, for 2 <= base <= 36. The result uses the lower-case letters 'a' to 'z' for digit values >= 10.
 			fmt.Println("-", number)
 		} else if ns == "octal" || ns == "o" {
 			number := strconv.FormatInt(number, 8)
