@@ -1,4 +1,5 @@
 <div align="center">
+    <h3>Numeral System Convertor<h3>
     <h2>A converter useful for all developers messing with Memory</h2>
     <br />
     <img align="center" src="https://user-images.githubusercontent.com/78080242/194722064-517d348a-08eb-4602-ab6e-54a13abd6576.png" align="left" height="250">
