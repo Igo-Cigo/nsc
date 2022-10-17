@@ -7,17 +7,22 @@ fn main() {
 }
 
 fn converter() {
+
+    let stdin = io::stdin();
     let mut number = String::new();
     let mut ns = String::new();
+
     println!("Please enter a number: ");
-    io::stdin().read_line(&mut number).expect("Error reading");
+    stdin.read_line(&mut number).expect("Error reading");
     println!("To what numeral system do you want to convert? (binary - B, octal - O, hexadecimal - H; quit - q)");
-    io::stdin().read_line(&mut ns).expect("Error reading");
+    stdin.read_line(&mut ns).expect("Error reading");
+    ns = ns.trim().to_string();
+    let i = number.parse::<i32>().unwrap_or(0);
     if ns == "q" {
         process::exit(0);
     }
     else if ns == "b" {
-        print!("HI");
+        println!("{:b}", i);
     };
     return converter()
 }
