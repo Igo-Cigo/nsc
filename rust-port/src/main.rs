@@ -17,7 +17,7 @@ fn converter() {
     println!("To what numeral system do you want to convert? (binary - B, octal - O, hexadecimal - H; quit - q)");
     stdin.read_line(&mut ns).expect("Error reading");
     ns = ns.trim().to_string();
-    let i = number.parse::<i32>().unwrap_or(0);
+    let i: i32 = number.parse().unwrap();
     if ns == "q" {
         process::exit(0);
     }
