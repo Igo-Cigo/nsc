@@ -1,5 +1,6 @@
 use std::io;
 use std::process;
+extern crate text_io;
 
 fn main() {
     println!("A numeral system converter");
@@ -17,6 +18,11 @@ fn converter() {
     println!("To what numeral system do you want to convert? (binary - B, octal - O, hexadecimal - H; quit - q)");
     stdin.read_line(&mut ns).expect("Error reading");
     ns = ns.trim().to_string();
+    let conv_number = number.trim();
+    match conv_number.parse::<u32>() {
+        Ok(i) => println!("{}", i),
+        Err(..) => println!("{}", conv_number),
+    };
     let i: i32 = number.parse().unwrap();
     if ns == "q" {
         process::exit(0);
