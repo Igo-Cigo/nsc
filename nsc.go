@@ -25,7 +25,7 @@ func converter() {
 	for {
 		fmt.Print("Please enter a number: ")
 		fmt.Scan(&number)
-		fmt.Println("To what numeral system do you want to convert? (binary - B, octal - O, hexadecimal - H; quit - q)")
+		fmt.Println("To what numeral system do you want to convert? (decimal - D, binary - B, octal - O, hexadecimal - H; quit - q)")
 		fmt.Scan(&ns)
 		ns = strings.ToLower(ns)
 		if ns == "q" {
@@ -42,6 +42,11 @@ func converter() {
 		} else if ns == "hexadecimal" || ns == "h" {
 			number := strconv.FormatInt(number, 16)
 			fmt.Println("-", strings.ToUpper(number))
+		} else if ns == "decimal" || ns == "d" { // very useful, no flaws whatsoever
+			number := strconv.FormatInt(number, 10)
+			fmt.Println("-", number)
+		} else {
+			os.Exit(0)
 		}
 		fmt.Println("")
 	}
