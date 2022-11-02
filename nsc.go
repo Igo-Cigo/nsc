@@ -48,7 +48,5 @@ func converter() {
 		} else {
 			os.Exit(0)
 		}
-		fmt.Println("")
 	}
-
 }
